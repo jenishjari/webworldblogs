@@ -1,0 +1,118 @@
+/**
+* 8.0 Media Queries
+* ----------------------------------------------------------------------------
+*/
+@media only screen and (min-width: 1551px) and (max-width: 1800px) {}
+@media only screen and (min-width: 1451px) and (max-width: 1550px) {}
+@media only screen and (min-width: 1251px) and (max-width: 1450px) {.theme-container{width: 1202px;}}
+@media only screen and (max-width: 1451px) {.ny-ourservice-inner .ny-ourservice-item:hover .ny-ourservice-title {-webkit-transform: translate3d(0,100px,0);transform: translate3d(0,100px,0);}}
+@media only screen and  (max-width: 1300px){.ny-mainbanner-main .ny-banner-text {grid-template-columns: 1fr 1fr;}.nyc-list-grid-main.nyc-mac-list {grid-template-columns: 1fr 1fr;}}
+@media only screen and (min-width: 1200px) and (max-width: 1251px) {.theme-container {width: 1152px;}}
+@media only screen and (min-width: 1024px) and (max-width: 1200px) {.theme-container{width: 980px!important;}}
+@media only screen and (max-width: 1400px){.ny-ourservice-details .ny-ourservice-title h4 {word-break: break-all;white-space: break-spaces;width: 70%;text-align: center;}}
+@media only screen and (max-width: 1200px) {
+	.nyc-icontext-inner.nyc-grid-item {display: grid;grid-template-columns: 1fr 1fr 1fr;}
+	.blog-page .site-content .blog {grid-template-columns: 1fr 1fr;}
+	.ny-ourservice-inner .ny-ourservice-item .ny-ourservice-title {transform: translate3d(0,60px,0);-moz-transform: translate3d(0,60px,0);-ms-transform: translate3d(0,60px,0);-o-transform: translate3d(0,60px,0);}
+.ny-ourservice-inner .ny-ourservice-item:hover .ny-ourservice-title {-webkit-transform: translate3d(0,70px,0);transform: translate3d(0,70px,0);}
+	.ny-whychoose-section .ny-whychoose-main .ny-whychoose-inner {margin-block-start: 40px;}
+	.header-bottom {padding-block: 6px; overflow: hidden;}
+	.mobile-menu ul li a{color:#4A535D !important}
+	.main-navigation {display: none;}
+	.mobile-navigation, .menu-toggle {padding: 0;box-sizing: border-box;width: auto;line-height: inherit;display: flex;justify-content: flex-end;align-items: center;flex: 1 1 auto;z-index: 99;}
+	.admin-bar .mobile-navigation.active .mobile-menu {top: 46px;}
+	.admin-bar .sticky-menu .mobile-navigation.active .mobile-menu {top: 0;}
+}
+@media only screen and (max-width: 1024px) {h1 {font-size: 32px;line-height: 46px;}.ny-commonrepair-main .ny-section-heading {margin-block-end: 10%;}.ny-macrepair-inner .ny-grid {grid-template-columns: 1fr 1fr;}h4 {font-size: 20px;line-height: 28px;}}
+@media only screen and (min-width: 980px) and (max-width: 1024px) {.theme-container{width: 940px!important;}}
+@media only screen and (max-width: 980px) {
+	.archive-content {grid-template-columns: 1fr 1fr;}
+	.nyc-contactus-image {text-align: center;}
+	.nyc-contactus-inner .nyc-grid-section {grid-template-columns: 1fr;gap: 70px;}
+	.nyc-image-text-item {margin-block: 5%;}
+	.nyc-image-text-item {display: block;text-align: center;}
+	.blog-page.left-sidebar .main-content-inner #primary {width: 100%;}
+	.blog-page.left-sidebar .main-content-inner #secondary {width: 100%;}
+	.nyc-list-grid-main {grid-template-columns: 1fr 1fr;}
+	.nyc-grid-section {grid-template-columns: 1fr;gap: 25px;}
+	.nyc-brand-main .nyc-brand-image {order: -1;}
+	.nyc-brand-main {display: grid;gap: 15px;}
+	.ny-whychoose-item .ny-whychoose-icon img {width: 50px;height: 50px;}
+	.ny-whychoose-title h5 {font-size: 14px;}
+	.ny-whychoose-section .ny-whychoose-main .ny-whychoose-inner {padding: 25px;}
+	.ny-ourservice-inner .ny-ourservice-item .ny-ourservice-title {transform: translate3d(0,40px,0);-moz-transform: translate3d(0,40px,0);-ms-transform: translate3d(0,40px,0);-o-transform: translate3d(0,40px,0);}
+.ny-ourservice-inner .ny-ourservice-item:hover .ny-ourservice-title {-webkit-transform: translate3d(0,50px,0);transform: translate3d(0,50px,0);}
+	.ny-textbanner-inner {flex-wrap: wrap;}
+	#second.footer-widget:last-child {border: 0;}
+	.theme-container{width: 736px!important;}
+	.ny-mainbanner-main .ny-banner-text {grid-template-columns: 1fr; gap: 35px;}
+	#footer-widget-area {grid-template-columns: 1fr; gap: 20px;}
+	#footer-widget-area .footer-widget .widget .toggle-block, #footer-widget-area .footer-widget .widget.toggled-off .toggle-block {display: none;}
+	#footer-widget-area .footer-widget .widget.toggled-on .toggle-block {display: block;}
+	.primary-sidebar .title-outer::before, .elementor-widget-sidebar .title-outer::before, .primary-sidebar .toggled-off .title-outer::before, .site-footer .title-outer::before, .widget_block h2::before {content: "\f107";position: absolute;right: 0;font-family: 'FontAwesome';font-size: 20px;color: #fff;top: 2px;height: auto;width: auto;text-align: center;z-index: 9;margin: auto;line-height: 22px;cursor: pointer;}
+	.primary-sidebar .toggled-on .title-outer::before, .site-footer .toggled-on .title-outer::before, .widget_block .toggled-on h2::before {content: "\f106";}
+	.footer-widget .widget {clear: both;margin: 0;}
+	#footer-widget-area .footer-widget:last-child {border: 0;}
+	.footer-widget {min-height: inherit;width: 100% !important;border-block-end: 1px solid #fb4848;margin-block-end: 0px;}
+}
+
+@media only screen and (max-width: 768px){
+	.fc-header-top-text-main::after {content: none;}
+	.fc-header-icon-text,.fc-header-text-main {display: none;}
+	.ny-website section.ny-mainbanner-section {margin-block-end: -90px;}
+	.nyc-icontext-inner.nyc-grid-item {grid-template-columns: 1fr 1fr;}
+	.nyc-brand-main {grid-template-columns: 1fr;gap: 25px;}
+	.ny-ourservice-inner .ny-ourservice-item .ny-ourservice-title {transform: translate3d(0,200px,0);-moz-transform: translate3d(0,200px,0);-ms-transform: translate3d(0,200px,0);-o-transform: translate3d(0,200px,0);}
+.ny-ourservice-inner .ny-ourservice-item:hover .ny-ourservice-title {-webkit-transform: translate3d(0,220px,0);transform: translate3d(0,220px,0);}
+	.ny-brandrepairs-title, .ny-macrepair-title {margin-block: 1% 2%;}
+	.header-top .header-left {width: 100%;flex: 1;}
+	.fc-header-icon-text, .fc-header-text-main {font-size: 0;}
+	.header-top .header-right {justify-content: center;}
+	.fc-header-top-text-main {padding-inline-end: 0;}
+	.fc-header-top-text-inner, .freshcodes-header-link {justify-content: center;}
+	.ny-macrepair-inner .ny-grid {grid-template-columns: 1fr;}
+	.mega-menu ul li.shop-menu > div.shop-product-outer > ul,
+	.theme-container {
+		width: calc(100% + 1px) !important;
+		padding-inline: 16px !important;
+		margin-inline:0!important;
+		clear: both;
+	}
+	.header-logo {display:none;}
+	.header-mob-logo {display:block;}
+	.ny-whychoose-main .ny-whychoose-inner,.ny-grid {grid-template-columns: 1fr;}
+	.ny-whychoose-main .ny-whychoose-inner {text-align: center;}
+}
+@media only screen and (max-width: 640px) {
+	.nyc-inner-repair-inner .nyc-image-block {grid-template-columns: 1fr;gap: 15px;}
+	.ny-commonrepair-inner .ny-commonrepair-grid {grid-template-columns: 1fr;}
+	.ny-whychoose-item .ny-whychoose-icon img {width: 30px;height: 30px;}
+	.ny-whychoose-section .ny-whychoose-main .ny-whychoose-inner {padding: 15px;}
+	.ny-whychoose-title h5 {font-size: 10px;line-height: 18px;}
+	.ny-whychoose-main .ny-whychoose-inner {gap: 0px;}
+}
+@media only screen and (max-width: 600px) {
+	.nyc-appoimnets-div h4, .nyc-offer h4 {padding-block: 0;}
+	.nyc-appoimnets-div .nyc-appoimnets-icon::before, .nyc-appoimnets-inner .nyc-offer-icon::before {bottom: -15px;}
+	.nyc-appoimnets-inner {display: grid;padding-block: 30px;}
+	.nyc-icontext-inner.nyc-grid-item {grid-template-columns: 1fr;}
+	.blog-page .site-content .blog {grid-template-columns: 1fr;}
+	.ny-contactform-inner .wpcf7-form .form-group p {margin-block: 25px;}
+	.ny-contactform-inner .ny-form-main {display: block;}
+	.ny-ourservice-inner .ny-ourservice-item .ny-ourservice-title {transform: translate3d(0,120px,0);-moz-transform: translate3d(0,120px,0);-ms-transform: translate3d(0,120px,0);-o-transform: translate3d(0,120px,0);}
+.ny-ourservice-inner .ny-ourservice-item:hover .ny-ourservice-title {-webkit-transform: translate3d(0,140px,0);transform: translate3d(0,140px,0);}
+	.admin-bar .sticky-menu.header-style {margin-top: 0;}
+}
+@media only screen and (max-width: 479px) {
+	.nyc-coupons-page section {overflow: visible;margin-block-end: 15%;}
+	.nyc-coupons-main .nyc-coupons-banner {grid-template-columns: 1fr;}
+	.archive-content {grid-template-columns: 1fr;}
+	.nyc-contactus-image img {height: auto;width: auto;}
+	.nyc-list-grid-main.nyc-mac-list {grid-template-columns: 1fr;}
+	.nyc-list-grid-main {grid-template-columns: 1fr;}
+	.ny-ourservice-inner .ny-ourservice-item .ny-ourservice-title {transform: translate3d(0,60px,0);-moz-transform: translate3d(0,60px,0);-ms-transform: translate3d(0,60px,0);-o-transform: translate3d(0,60px,0);}
+.ny-ourservice-inner .ny-ourservice-item:hover .ny-ourservice-title {-webkit-transform: translate3d(0,75px,0);transform: translate3d(0,75px,0);}
+	.fc-header-top-text-main::after {content: none;}
+}
+@media only screen and (max-width: 379px){}
+@media only screen and (max-width: 320px){}

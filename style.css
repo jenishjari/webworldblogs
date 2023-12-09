@@ -1,0 +1,401 @@
+/*
+Theme Name: Nyclaptoprepair
+Theme URI: #
+Author: Freshcodes
+Version: 1.0
+Tested up to: 5.8
+Requires PHP: 7.0
+Description: Our default theme lets you create a responsive website with a sleek, modern design.
+License: GNU General Public License v2
+License URI: #
+Tags:  one-column, two-columns, right-sidebar,  custom-header, custom-menu, editor-style, featured-images, post-formats, rtl-language-support, sticky-post, translation-ready
+Text Domain: nyclaptoprepair
+*/
+/*------------------------------------------------------------------
+[Table of contents]
+1. Body
+2. Header / #header
+3. Content / #content
+	3.1. Left column / #leftcolumn
+	3.2. Right column / #rightcolumn
+	3.3. Sidebar / #sidebar
+		3.3.1. RSS / #rss
+		3.3.2. Search / #search
+		3.3.3. Boxes / .box
+		3.3.4. Sideblog / #sideblog
+		3.3.5. Advertisements / .ads
+4. Footer / #footer
+-------------------------------------------------------------------*/
+.components-panel .components-flex {
+	display: inherit;
+}
+.fa {
+	font-family: 'FontAwesome' !important;
+	font-weight: inherit !important;
+}
+/*-----------------Hover Effects---------------*/
+.ny-ourservice-inner .ny-ourservice-item:hover .ny-ourservice-imgblock::before {background: rgba(0, 0, 0, 0.6);}
+.ny-ourservice-inner .ny-ourservice-item .ny-ourservice-details::after {border-right: 1px solid #fff;border-left: 1px solid #fff;-webkit-transform: scale(1,0);transform: scale(1,0);}
+.ny-ourservice-inner .ny-ourservice-item .ny-ourservice-details::before {border-top: 1px solid #fff;border-bottom: 1px solid #fff;-webkit-transform: scale(0,1);transform: scale(0,1);}
+.ny-ourservice-inner .ny-ourservice-item:hover .ny-ourservice-details::before,.ny-ourservice-inner .ny-ourservice-item:hover .ny-ourservice-details::after{opacity: 1;-webkit-transform: scale(1);transform: scale(1);}
+.ny-ourservice-inner .ny-ourservice-details::before, .ny-ourservice-inner .ny-ourservice-details::after {position: absolute;top: 30px;right: 30px;bottom: 30px;left: 30px;content: '';opacity: 0;-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;transition: opacity 0.35s, transform 0.35s;z-index: 99;border-radius: 10px;}
+.ny-ourservice-imgblock {position: relative;overflow: hidden;border-radius: 20px;}
+.ny-ourservice-inner .ny-ourservice-details {position: absolute;top: 0;left: 0;width: 100%;height: 100%;bottom: 0;margin: auto;}
+.ny-ourservice-inner .ny-ourservice-item:hover .ny-ourservice-title {opacity: 1;-webkit-transform: translate3d(0,130px,0);transform: translate3d(0,130px,0);}
+.ny-ourservice-inner .ny-ourservice-item .ny-ourservice-title {-webkit-transition: -webkit-transform 0.35s;transition: transform 0.35s;transform: translate3d(0,110px,0);-moz-transform: translate3d(0,110px,0);-ms-transform: translate3d(0,110px,0);-o-transform: translate3d(0,110px,0);}
+.ny-ourservice-imgblock::before {content: "";width: 100%;background: rgba(0, 0, 0, 0.5);position: absolute;border-radius: 20px;z-index: 9;height: 100%;}
+.ny-ourservice-details .ny-ourservice-title h4 {color: #fff;padding-inline: 10px;text-align: center;}
+/*----------------------------------------*/
+
+/*-----------------Loader CSS---------------*/
+.fc-spinner-wrapper {background: #fff;bottom: 0;left: 0;position: fixed;right: 0;top: 0;z-index: 999999;}
+.sk-folding-cube {margin: 0 auto;width: 40px;height: 40px;position: relative;-webkit-transform: rotateZ(45deg);transform: rotateZ(45deg);}
+.sk-folding-cube .sk-cube::before {content: '';position: absolute;top: 0;left: 0;width: 100%;height: 100%;background-color: #fed700;-webkit-animation: sk-foldCubeAngle 2s infinite linear both;animation: sk-foldCubeAngle 2s infinite linear both;-webkit-transform-origin: 100% 100%;-ms-transform-origin: 100% 100%;transform-origin: 100% 100%;}
+.sk-folding-cube .sk-cube {float: left;width: 50%;height: 50%;position: relative;-webkit-transform: scale(1.1);-ms-transform: scale(1.1);transform: scale(1.1);border-radius: 4px;-webkit-border-radius: 4px;-o-border-radius: 4px;-moz-border-radius: 4px;}
+.sk-folding-cube .sk-cube2 {-webkit-transform: scale(1.1) rotateZ(90deg);transform: scale(1.1) rotateZ(90deg);}
+.sk-folding-cube .sk-cube4 {-webkit-transform: scale(1.1) rotateZ(270deg);transform: scale(1.1) rotateZ(270deg);}
+.sk-folding-cube .sk-cube3 {-webkit-transform: scale(1.1) rotateZ(180deg);transform: scale(1.1) rotateZ(180deg);}
+.fc-spinner {width: 50px;height: 40px;position: absolute;left: 0;right: 0;top: 0;bottom: 0;margin: auto;}
+.sk-folding-cube .sk-cube2::before {-webkit-animation-delay: 0.2s;animation-delay: 0.2s;}
+.sk-folding-cube .sk-cube4::before {-webkit-animation-delay: 0.6s;animation-delay: 0.6s;}
+.sk-folding-cube .sk-cube3::before {-webkit-animation-delay: 0.4s;animation-delay: 0.4s;}
+@-webkit-keyframes sk-foldCubeAngle {0%, 10% {-webkit-transform: perspective(140px) rotateX(-180deg);transform: perspective(140px) rotateX(-180deg);opacity: 0;} 25%, 75% {-webkit-transform: perspective(140px) rotateX(0deg);transform: perspective(140px) rotateX(0deg);opacity: 1;} 90%, 100% {-webkit-transform: perspective(140px) rotateY(180deg);transform: perspective(140px) rotateY(180deg);opacity: 0;}}
+@keyframes sk-foldCubeAngle {0%, 10% {-webkit-transform: perspective(140px) rotateX(-180deg);transform: perspective(140px) rotateX(-180deg);opacity: 0;} 25%, 75% {-webkit-transform: perspective(140px) rotateX(0deg);transform: perspective(140px) rotateX(0deg);opacity: 1;} 90%, 100% {-webkit-transform: perspective(140px) rotateY(180deg);transform: perspective(140px) rotateY(180deg);opacity: 0; }}
+#to_top::before {font-family: 'fontawesome';font-size: 22px;position: absolute;left: 0;right: 0;margin: 0 auto;top: 3px;content: "\f106";text-align: center;}
+#to_top {z-index: 999;display: none;text-align: center;bottom: 30px;font-size: 0;position: fixed;right: 30px;width: 32px;height: 32px;border-radius: 50%;}
+/*-------------------------------------------*/
+
+/*-----------------Common CSS---------------*/
+.page-title.header {display: none;}
+.full-width #secondary {display: none;}
+.ny-lprepair-banner img {border-radius: 20px;}
+.blog .ny-ourservice-section, .blog .ny-testimonial-section,.blog .ny-whychoose-section {display: none;}
+.ny-whychoose-section {padding-block-end: 10px;}
+.ny-singular-page .ny-whychoose-section,.blog .ny-whychoose-section {position: relative;z-index: 7;overflow: visible;}
+.page-title-inner {position: relative;z-index: 7;}
+.page-title {display: inline-block;width: 100%;vertical-align: top;box-sizing: border-box;word-break: break-word;position: relative;}
+.fc-date-btn-main .read-more a:hover {background: none;}
+body{margin:0;}
+.page-title {margin-block-end: 6%;}
+.page-title-inner {padding-block: 0;display: grid;grid-template-columns: 1fr;padding-block: 4% 0px;text-align: center;}
+.ny-link {color: #FB4848;}
+*{box-sizing: border-box;}
+img {height: auto;max-width: 100%;}
+ul {clear: both;padding: 0;}
+.ny-website section {margin-block-end: 7%; overflow: hidden;}
+.page-template-home .page-title, .home .page-title {display: none;}
+.widget ul, .widget ol {list-style: none;margin: 0;padding: 0;}
+a {text-decoration: none;cursor: pointer;}
+body.grid {margin: 0;}
+.bypostauthor > article .fn::before, .comment-edit-link::before, .comment-reply-title small a::before, .comment-reply-link::before, .contributor-posts-link::before, .menu-toggle::before, .search-box .search_btn::after, .slider-direction-nav a::before {-webkit-font-smoothing: antialiased;display: inline-block;font: normal 12px/1 FontAwesome;text-decoration: inherit;vertical-align: middle;}
+h1, h2, h3, h4, h5, h6 {margin: 0;clear: both;padding: 10px 0;}
+.ny-brandrepairs-btn {display: flex;justify-content: center;}
+/*----------------------------------------*/
+
+/*-----------------Header CSS---------------*/
+.header-logo img, .header-mob-logo img {height: auto !important;}
+.sticky-menu.header-style {position: fixed;display: block;width: 100%;left: 0;right: 0;z-index: 9999;top: 0px;box-sizing: border-box;margin-top: 0;padding: 0;box-shadow: 0px -20px 30px 6px #000;-moz-box-shadow: 0px -20px 30px 6px #000;-webkit-box-shadow: 0px -20px 30px 6px #000;-webkit-font-smoothing: antialiased;animation: 0.9s ease 0s normal both 1 running fixedAnim;-webkit-animation: 0.9s ease 0s normal both 1 running fixedAnim;-moz-animation: 0.9s ease 0s normal both 1 running fixedAnim;-ms-animation: 0.9s ease 0s normal both 1 running fixedAnim;-o-animation: 0.9s ease 0s normal both 1 running fixedAnim;margin: 0;}
+@-webkit-keyframes fixedAnim {0% {top: -100%;}100% {top: 0;}}
+@-moz-keyframes fixedAnim {0% {top: -100%;}100% {top: 0;}}
+@keyframes fixedAnim {0% {top: -100%;}100% {top: 0;}}
+/* .sticky-menu .header-top, .sticky-menu .header-bottom {display: none;}
+.sticky-menu .site-header-fix-header-top-sticky .header-top {display: block;}
+.sticky-menu .site-header-fix-header-top-sticky .header-bottom {display: block;} */
+.admin-bar .sticky-menu.header-style {margin-top: 32px;}
+.sticky-menu {min-height: 140px;}
+#follow_us .toggle-block li > a {display: flex;}
+.header-main {display: flex;position: relative;vertical-align: top;width: 100%;display: flex;display: -webkit-flex;display: -ms-flexbox;-webkit-flex-direction: column;-ms-flex-direction: column;flex-direction: column;margin: 0 auto;}
+.header-top {padding-inline: 0px; display: flex;}
+.close-menu {width: 24px;z-index: 9;position: relative;cursor: pointer;}
+.mobile-menu-inner {margin: 0;padding: 5px 20px;}
+.fc-mobile-text .fc-mob-menu-text {margin: 0;}
+.fc-mobile-text {display: flex;align-items: center;position: relative;padding:10px 20px;background: #EDEDED; justify-content: space-between;}
+.mobile-menu ul li {width: 100%;text-align: left;list-style-type: none;padding: 0;position: relative;}
+.mobile-menu ul li a {display: block;padding: 8px 0;border-bottom: 1px solid #e5e5e5;transition: all 300ms ease-in-out;-webkit-transition: all 300ms ease-in-out;-ms-transition: all 300ms ease-in-out;}
+.close-menu::before {content: "";mask-image: url("images/freshcodes/cat-close.svg");-webkit-mask-image: url("images/freshcodes/cat-close.svg");mask-position: center;-webkit-mask-position: center;mask-repeat: no-repeat;-webkit-mask-repeat: no-repeat;mask-size: 17px;-webkit-mask-size: 17px;width: 20px;height: 20px;position: absolute;top: auto;left: auto;bottom: -9px;right: 0;background: #222222;margin: auto;}
+.header-top .theme-container, .header-bottom .theme-container {display: flex; justify-content: space-between; align-items: center;}
+.theme-container {width: 1400px; margin: 0 auto; position: relative;}
+.header-left, .header-center, .header-right {display: flex; align-items: center;}
+.header-left {justify-content: flex-start; padding-block: 0px;}
+.header-main .header-top {padding-block: 25px;}
+.mobile-navigation {display: none; z-index: 99; flex: 1;}
+.fc-header-icon-div img {width: 40px;height: 35px;}
+.fc-header-icon-div {display: flex;}
+.fc-header-top-text-inner,.freshcodes-header-link {display: flex;gap: 15px;align-items: center;}
+/*Header Menu*/
+.fc-header-text-main a {text-transform: none;}
+.mega-menu ul li.menu-item-has-children a{position: relative;}
+.mega-menu ul li.menu-item-has-children a::before {content: "\f107";position: absolute;right: 0;font-family: 'FontAwesome';font-size: 20px;color: #fff;top: auto;height: auto;width: auto;text-align: center;z-index: 9;margin: auto;line-height: 22px;cursor: pointer;margin-block-start: 3px;bottom: auto;margin-inline-end: 8px;}
+.hitarea {cursor: pointer;float: right;height: 20px;position: absolute;right: 0;top: 11px;width: 20px;z-index: 7;text-align: center;padding: 0 1px;line-height: 20px;}
+.mobile-menu .collapsable-hitarea::after, .mobile-menu .expandable-hitarea::before {cursor: pointer;display: block;font-family: FontAwesome;font-weight: normal;position: absolute;right: 0;left: 0;top: 0;color: #555;font-size: 12px;}
+.mobile-menu .expandable-hitarea::before {content: "";mask-image: url("images/freshcodes/pluse.svg");-webkit-mask-image: url("images/freshcodes/pluse.svg");mask-position: center;-webkit-mask-position: center;mask-repeat: no-repeat;-webkit-mask-repeat: no-repeat;mask-size: 17px;-webkit-mask-size: 10px;width: 20px;height: 20px;position: absolute;top: 0;left: auto;bottom: auto;right: 0;background: #212121;}
+.mobile-menu .collapsable-hitarea::after {content: "";mask-image: url("images/freshcodes/minus.svg");-webkit-mask-image: url("images/freshcodes/minus.svg");mask-position: center;-webkit-mask-position: center;mask-repeat: no-repeat;-webkit-mask-repeat: no-repeat;mask-size: 17px;-webkit-mask-size: 10px;width: 20px;height: 20px;position: absolute;top: -4px;left: auto;bottom: auto;right: 0;background: #212121;}
+.mobile-navigation.active .mobile-menu {overflow-y: auto;transform: translateX(0px) !important;-webkit-transform: translateX(0px) !important;-ms-transform: translateX(0px) !important;-o-transform: translateX(0px) !important;-moz-transform: translateX(0px) !important;transition: all 300ms ease 0s;-webkit-transition: all 300ms ease 0s;-moz-transition: all 300ms ease 0s;-ms-transition: all 300ms ease 0s;-o-transition: all 300ms ease 0s;}
+.mobile-menu {background: #fff none repeat scroll 0 0;box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);-ms-box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);-o-box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);box-sizing: border-box;height: 100%;left: 0;margin-inline-start: 0;position: fixed;right: auto;top: 0;width: 320px;z-index: 99999;transform: translateX(-110%);-webkit-transform: translateX(-110%);-moz-transform: translateX(-110%);-ms-transform: translateX(-110%);-o-transform: translateX(-110%);transition: all 300ms ease;-webkit-transition: all 300ms ease;-moz-transition: all 300ms ease;-ms-transition: all 300ms ease;-o-transition: all 300ms ease;}
+.menu-toggle::before {mask-image: url("images/freshcodes/menu.svg");-webkit-mask-image: url("images/freshcodes/menu.svg");mask-position: center;-webkit-mask-position: center;mask-repeat: no-repeat;-webkit-mask-repeat: no-repeat;mask-size: 22px;-webkit-mask-size: 22px;content: "";position: relative;height: 20px;width: 20px;right: 0;top: 0;margin-inline-end: 8px;background: #222222;left: auto; cursor: pointer;background: #fff !important;}
+#site-navigation {z-index: 9;}
+.bg-overlay.active {top: 0;left: 0;right: 0;bottom: 0;z-index: 99;position: fixed;opacity: 1;visibility: visible;background-color: rgba(0,0,0,0.3);transition: all 0.3s ease;}
+.mega-menu ul, .mega-menu ul li {list-style: none;}
+.ny-mainbanner-inner .banner-overlay {border-radius: 0;}
+.mega-menu ul, .mega-menu ul, .mega-menu ul li {margin-block: 0; padding: 0; border: none; margin-inline-start: 0;}
+.mega-menu ul li {display: inline-block;vertical-align: top;position: relative;}
+.mega-menu ul li a {display: block;position: relative;margin: 0;padding: 16px 28px;cursor: pointer;line-height: 24px;-webkit-transition: -webkit-all 300ms ease-in-out;-o-transition: -o-all 300ms ease-in-out;transition: all 300ms ease-in-out;}
+.mega-menu ul li.menu-item-has-children > .sub-menu > li a::before {content: none;}
+.mega-menu ul li ul.sub-menu, .mega-menu ul li ul.children {position: absolute;left: 0;right: 0;top: 100%;padding: 0;min-width: 250px;text-align: left;-webkit-transform: scaleY( 0 );-moz-transform: scaleY( 0 );-ms-transform: scaleY( 0 );-o-transform: scaleY( 0 );transform: scaleY( 0 );-webkit-transition: -webkit-transform 0.5s ease, max-height 0.3s step-end, max-width 0.3s step-end, padding 0.3s step-end;-o-transition: -o-transform 0.5s ease, max-height 0.3s step-end, max-width 0.3s step-end, padding 0.3s step-end;transition: transform 0.5s ease, max-height 0.3s step-end, max-width 0.3s step-end, padding 0.3s step-end;-webkit-transform-origin: 0% 0%;-moz-transform-origin: 0% 0%;-ms-transform-origin: 0% 0%;-o-transform-origin: 0% 0%;transform-origin: 0% 0%;box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.1);-moz-box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.1);-webkit-box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.1);}
+.mega-menu ul li:hover > ul.sub-menu, .mega-menu ul li:hover > ul.children {-webkit-transform: scaleY( 1 );-moz-transform: scaleY( 1 );-ms-transform: scaleY( 1 );-o-transform: scaleY( 1 );transform: scaleY( 1 );-webkit-transition: all 300ms ease-in-out;-o-transition: all 300ms ease-in-out;transition: all 300ms ease-in-out;}
+.mega-menu ul li ul.sub-menu .menu-item {width: 100%;}
+/*----------*/
+.header-mob-logo {display: none;}
+.page-template-schedule-appointment .ny-ourservice-section,.page-template-contact-us-template .ny-ourservice-section {display: none;}
+.header-top .header-right {gap: 25px;}
+.fc-header-top-text-main {position: relative;padding-inline-end: 25px;}
+.fc-header-top-text-main::after {content: "";width: 1px;height: 45px;background: #e5e5e5;display: block;position: absolute;top: 0;bottom: 0;margin: auto;right: 0;}
+/*----------------------------------------*/
+
+/*-----------------Home Page CSS---------------*/
+.ny-textbanner-banner img {border-radius: 20px;}
+.ny-ourservice-details .ny-ourservice-title {display: flex;justify-content: center;z-index: 9999;position: relative;}
+.ny-ourservice-title a {position: relative;z-index: 99999;}
+#follow_us .toggle-block li {display: flex;gap: 12px;}
+.ny-mainbanner-main .ny-mainbanner-inner,.nyc-brand-wrapper {background-image: url('images/freshcodes/ny-mainbanner.jpg') !important;background-repeat: no-repeat;background-size: cover;position: relative;background-position: top center;margin-block-end: 6%;}
+.ny-mainbanner-main .ny-banner-text {display: grid;grid-template-columns: 1.8fr 1fr;align-items: center;padding-block: 1.5% 6%;gap: 15px;}
+.ny-website section.ny-mainbanner-section {margin-block-end: -160px;}
+.banner-overlay {position: absolute;bottom: 0;background: rgba(0, 0, 0, 0.4);width: 100%;height: 100%;border-radius: 25px;}
+/*Contact From CSS*/
+.ny-contactform-inner .ny-form-main {display: flex;gap: 20px;}
+.ny-contactform-inner .wpcf7-form {padding: 18px 30px 0px;background: #3e484b;box-shadow: 0px 0px 40px 0px #3e484b;border-radius: 20px;-webkit-box-shadow: 0px 0px 40px 0px #3e484b;-moz-box-shadow: 0px 0px 40px 0px #3e484b;}
+.ny-contactform-inner .wpcf7-form .form-group .wpcf7-form-control-wrap,.ny-contactform-inner .wpcf7-form .form-group p,.ny-contactform-inner .wpcf7-form .form-group p .wpcf7-form-control-wrap {display: block;width: 100%;}
+.ny-contactform-inner .wpcf7-form .form-group .wpcf7-form-control-wrap .wpcf7-form-control {padding: 10px 15px;width: 100%;border-radius: 7px;border: 0;background: #fff;}
+.ny-contactform-inner .wpcf7-form .form-group .wpcf7-form-control-wrap .wpcf7-form-control:focus-visible {outline: 0;}
+.ny-contactform-inner .wpcf7-form .form-group .btn-inner p,.ny-contactform-inner .wpcf7-form .form-group .btn-container .wpcf7-form-control.btn {display: block;width: 100%;}
+.ny-banner-text .ny-main-title h1 {color: #fff;}
+.site-footer {overflow: hidden;}
+/*---------------*/
+.ny-ourservice-inner .ny-ourservice-item:hover .ny-ourservice-imgblock img {transform: scale(1.5);-webkit-transform: scale(1.5);-moz-transform: scale(1.5);-ms-transform: scale(1.5);-o-transform: scale(1.5);}
+.ny-ourservice-imgblock img {display: flex;-webkit-transition: opacity 0.85s, -webkit-transform 0.85s;
+  transition: opacity 0.85s, transform 0.85s;}
+.ny-whychoose-section .ny-whychoose-main .ny-whychoose-inner{padding: 40px;background: #fff;-webkit-box-shadow: 0 0px 15px 0 #BFBFBF;box-shadow: 0 0px 15px 0 #BFBFBF;border-radius: 20px;grid-template-columns: 1fr 1fr 1fr;}
+.ny-whychoose-main .ny-whychoose-inner,.ny-grid {display: grid;grid-template-columns: 1fr 1fr 1fr;gap: 40px;}
+.ny-whychoose-item .ny-whychoose-icon img {width: 80px;height: 80px;}
+.ny-whychoose-inner .ny-whychoose-item {text-align: center;}
+.ny-whychoose-item .ny-whychoose-title {margin-block-start: 3%;}
+.ny-section-heading {text-align: center;margin-block-end: 4%;}
+.ny-commonrepair-inner .ny-commonrepair-grid {display: grid;grid-template-columns: 1fr 1fr;gap: 70px 45px;}
+.ny-commonrepair-item .ny-commonrepair-icon {margin-block-start: -80px;}
+.ny-commonrepair-icon img {border-radius: 50%;height: 90px;width: 90px;}
+.ny-commonrepair-item {padding: 40px;border: 1px solid #e5e5e5;text-align: center;border-radius: 15px;-webkit-box-shadow: 0 0px 15px 0 #BFBFBF;box-shadow: 0 0px 15px 0 #BFBFBF;}
+.ny-commonrepair-main .ny-section-heading {margin-block-end: 7%;}
+.ny-commonrepair-grid .ny-commonrepair-title {margin-block: 2%;}
+.ny-brandrepairs-main .ny-brandrepairs-inner {display: flex;}
+.ny-brandrepairs-item {margin-inline: 15px;text-align: center;height: 150px;display: flex;align-items: center;width: 200px;	justify-content: center;}
+.ny-macrepair-inner .ny-macrepair-item {border: 1px solid #e5e5e5;border-radius: 20px;}
+.ny-macrepair-item .ny-macrepair-imgblock img {border-top-left-radius: 20px;border-top-right-radius: 20px;}
+.ny-macrepair-inner .ny-macrepair-item .ny-macrepair-deatils {padding: 10px 25px 35px;display: inline-block;}
+.ny-carousel .owl-item {display: flex;justify-content: center;}
+.ny-brandrepairs-title, .ny-macrepair-title {margin-block: 2% 4%;}
+.ny-brandrepairs-content {margin-block-end: 8%;}
+.ny-textbanner-inner {display: flex;gap: 50px;}
+.ny-textbanner-text .ny-content,.ny-lprepair-inner .ny-content,.ny-mac-repair-inner .ny-content {margin-block: 2%;display: inline-block;}
+.ny-textbanner-text .ny-content-sub {margin-block-end: 2%;display: inline-block;}
+.ny-textbanner-inner .ny-list{list-style: none;}
+.ny-textbanner-inner .ny-list .ny-item{position: relative;display: flex;gap: 10px;align-items: center;padding-block: 6px;}
+.ny-textbanner-inner .ny-list .ny-item::before {content: "";mask-image: url("images/freshcodes/fc-right-arrow.svg");-webkit-mask-image: url("images/freshcodes/fc-right-arrow.svg");mask-position: center;-webkit-mask-position: center;mask-repeat: no-repeat;-webkit-mask-repeat: no-repeat;mask-size: 18px;-webkit-mask-size: 18px;height: 20px;width: 20px;background: #222222;display: block;top: 1px;}
+.ny-textbanner-btn {margin-block: 4%;}
+.nyc-appoimnets-inner {display: flex;justify-content: center;gap: 40px;}
+/*----------------------------------------*/
+
+/*-----------------Inner Pages CSS---------------*/
+.page-id-9 .ny-brandrepairs-content {margin-block-end: 8%;min-height: 240px;}
+.ny-ourservice-details .ny-ourservice-title h4:hover {color: #FE2B20;}
+.ny-heading .ny-title {text-align: center;   color: #ffff;   font-size: 35px;    font-weight: 700;}
+.nyc-contactus-banner-main {background-image: url(images/freshcodes/nyc-contact-us-banner.webp);background-repeat: no-repeat;background-size: cover;padding-block: 4%;margin-block-start: 7%;}
+.nyc-contactus-grid {display: grid;grid-template-columns: 1fr 1fr;}
+.nyc-contactus-grid .nyc-contactus-grid-item {display: flex;justify-content: center;}
+.nyc-contactus-grid-item img {border-radius: 25px;}
+.nyc-icontext-heading a:hover h2{color: #FE4940;}
+.nyc-icontext-heading a h2{font-size: 24px;line-height: 32px;}
+.nyc-appoimnets-div .nyc-appoimnets-icon,.nyc-appoimnets-inner .nyc-offer-icon {position: relative;display: inline-block;}
+.nyc-appoimnets-inner .nyc-appoimnets-div,.nyc-appoimnets-inner .nyc-offer {display: block;padding-inline-end: 50%;}
+.nyc-appoimnets-inner .nyc-offer-icon::before {background-image: url(images/freshcodes/nyc-discount-icon.png) !important;}
+.nyc-appoimnets-div h4,.nyc-offer h4 {color: #fff;padding-block: 19px;}
+.nyc-appoimnets-inner {display: flex;justify-content: flex-start;gap: 40px;}
+.nyc-appoimnets-div .nyc-appoimnets-icon::before,.nyc-appoimnets-inner .nyc-offer-icon::before {content: "";background-image: url(images/freshcodes/nyc-schedule-icon.png);background-repeat: no-repeat;background-size: cover;background-position: center;width: 35px;height: 35px;display: block;position: absolute;}
+.nyc-schedule-page .iframe_app {width: 100%;height: 1440px;}
+.nyc-schedule-page .ny-mac-repair-main,.nyc-schedule-page .nyc-brand-main .nyc-brand-image {display: none;}
+.nyc-coupons-page .ny-mac-repair-main {display: none;}
+.nyc-brand-wrapper .banner-overlay {border-radius: 0;}
+.nyc-image-block {display: flex;justify-content: center;max-width: 100%;}
+.nyc-image-block img {display: inline-block;width: 100%;}
+.nyc-coupons-main .nyc-coupons-banner {display: grid;grid-template-columns: 1fr 1fr;justify-content: center;gap: 6%;margin-block-start: 50px;}
+.nyc-coupons-page .nyc-brand-image {display: none;}
+.nyc-coupons-page .nyc-brand-main,.nyc-schedule-page .nyc-brand-main {grid-template-columns: 1fr;text-align: center;}
+.nyc-brand-wrapper .nyc-brand-main {padding-block: 3.5% 3.5%;}
+.nyc-404-banner {display: flex;justify-content: center;margin-block: 3% 0;}
+.nyc-404-banner img {width: 540px;height: auto;}
+.error404 .woocommerce-info {text-align: center;font-size: 25px;}
+.error404 .search-form label {display: block;}
+.error404 .search-form {text-align: center;margin-block: 5%;}
+.nyc-waterdamage-description {font-size: 20px;line-height: 28px;}
+.error404 .search-form .search-field {padding: 10px;width: calc(100% - 395px);margin-block-end: 30px;border-radius: 25px;border: 1px solid #e5e5e5;}
+.nyc-brand-wrapper .nyc-brand-text, .nyc-brand-wrapper .nyc-brand-text .ny-title {color: #fff;}
+.nyc-mac-repair-image-text .ny-brandrepairs-btn,.nyc-mac-repair-wrapper .ny-brandrepairs-btn {justify-content: flex-start;margin-block-start: 30px;}
+.nyc-image-text-item:nth-child(2) .nyc-image-text .ny-brandrepairs-btn {justify-content: end;}
+.nyc-inner-repair-inner .ny-brandrepairs-btn {justify-content: flex-start;}
+.nyc-waterdamage-imageblock {background-image: url('images/freshcodes/nyc-waterdamage-banner.png');background-repeat: no-repeat;background-size: cover;position: relative;background-position: center;display: flex;max-width: 100%;height: auto;position:relative;padding-block: 11%;border-radius: 25px;}
+.nyc-waterdamage-imageblock.nyc-commondiv {background-image: url('images/freshcodes/nyc-common-banner.jpg');}
+.nyc-waterdamage-main.nyc-common-section {margin-block: 0 7%;}
+.nyc-waterdamage-details .ny-brandrepairs-btn {margin-block-start: 40px;}
+.nyc-waterdamage-description span {margin-block: 1%;display: inline-block;}
+.nyc-waterdamage-main {max-width: 100%;display: flex;border-radius: 25px;overflow: hidden;margin-block: 7.3% 6.3%;}
+.nyc-waterdamage-details {display: block;width: 100%;text-align: center;color: #fff;padding-inline: 10%;position: relative;}
+.nyc-waterdamage-details .nyc-waterdamage-title {color: #fff;text-transform: uppercase;}
+.ny-repair .ny-brandrepairs-btn {margin-block-start: 25px;}
+.ny-inner-repair .nyc-grid-section {grid-template-columns: 1.5fr 1fr;margin-block: 0 5%;}
+.ny-mac-repair-inner .ny-brandrepairs-btn {margin-block-start: 25px;}
+.ny-mac-inner-repair .nyc-grid-section {margin-block: 0 7%;}
+.ny-lprepair-text .ny-brandrepairs-btn {justify-content: flex-start;}
+.nyc-list-grid-main.nyc-mac-list {grid-template-columns: 1fr 1fr 1fr;}
+.nyc-grid-section {display: grid;grid-template-columns: 1fr 1.5fr;gap: 60px;margin-block-start: 1%;}
+.nyc-list-grid-main .nyc-list-grid {display: grid;grid-template-columns: 1fr 2fr;gap: 0;}
+li {display: block;list-style: none;width: auto;}
+.nyc-list-grid li {margin-block: 8px;position: relative;display: flex;gap: 10px;align-items: center;}
+.nyc-list-grid li::before {content: "";background-image: url(images/freshcodes/ny-check.png);background-size: contain;height: 16px;width: 16px;display: block;background-repeat: no-repeat;}
+.nyc-brand-main {display: grid;grid-template-columns: 1.5fr 1fr;padding-block: 5% 7%;gap: 80px;align-items: center;}
+p.banner-home-text { color: #fff;}
+.nyc-brand-main .nyc-brand-text {flex: 1;}
+.nyc-inner-repair-inner .nyc-image-block {display: grid;grid-template-columns: 1fr 1fr 1fr;gap: 25px;margin-block: 5% 3%;}
+.ny-inner-repair-section {margin-block-end: 4%;}
+.nyc-image-item img {border-radius: 20px;}
+.nyc-image-text-item {display: grid;gap: 30px;margin-block: 3%;grid-template-columns: 1fr 2fr;}
+.nyc-image-text-item:nth-child(2) .nyc-image-text {text-align: right;}
+.nyc-image-text-item:nth-child(2) {grid-template-columns: 2fr 1fr;}
+.nyc-image-text-item:nth-child(2) .nyc-image-block {order: 2;}
+.nyc-image-block img {border-radius: 20px;}
+.nyc-contactus-inner .nyc-grid-section {grid-template-columns: 1.3fr 1fr;gap: 170px;margin-block-start: 5%;}
+.nyc-contactus-image img {height: 270px;width: auto;}
+.nyc-contactus-image {text-align: left;margin-block-start: 3%;}
+.nyc-icon-div img {width: 55px;height: 55px;display:flex;align-items: center;}
+.nyc-icon-inner {display: inline-block;background: #FB4848;padding: 20px;border-radius: 50px;}
+.nyc-icon-details {width: 100%;text-align: center;margin-block-start: -55px;}
+.nyc-icontext-section .nyc-icontext-item {box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.12);padding-block-end: 20px;border-radius: 20px;overflow: hidden;}
+.nyc-icontext-inner.nyc-grid-item {display: grid;grid-template-columns: 1fr 1fr 1fr 1fr;gap: 45px 35px;}
+.nyc-icontext-section {display: flex;width: 100%;margin-block: 7% 7%;}
+.ny-website .ny-lprepair-section,.ny-website .ny-mac-repair-section {overflow: visible;}
+.nyc-inner-details-block .nyc-content {margin-block: 1.4%;}
+.nyc-map-section {max-width: 100%;display: block;margin-block-start: 5%;}
+.nyc-map-section iframe {width: 100%;border-radius: 20px;box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.12);}
+.archive-content {display: grid;grid-template-columns: 1fr 1fr 1fr;margin-block: 2%;gap: 15px;}
+.sitemap-item ul > li {padding-block: 4px;display: inline-block;position: relative;display: flex;gap: 5px;align-items: center;}
+.sitemap-item ul > li::before {content: "";mask-image: url("images/freshcodes/fc-right-arrow.svg");-webkit-mask-image: url("images/freshcodes/fc-right-arrow.svg");mask-position: center;-webkit-mask-position: center;mask-repeat: no-repeat;-webkit-mask-repeat: no-repeat;mask-size: 18px;-webkit-mask-size: 18px;height: 20px;width: 20px;background: #222222;display: block;top: 1px;}
+/*----------------------------------------*/
+
+/*-----------------Blog Page CSS-----------*/
+.blog .page-title.header {display: block;}
+.blog-page .blog {margin-block-end: 6%;}
+.blog-page.left-sidebar .main-content-inner #primary {float: right;width: 74.5%;margin: 0;box-sizing: border-box;}
+.blog-page.left-sidebar .main-content-inner #secondary {position: relative;float: left;width: 23%;box-sizing: border-box;margin-bottom: 30px;}
+.blog-page .site-content .blog {display: grid;grid-template-columns: 1fr 1fr;gap: 35px;}
+.blog-page .site-content .blog .entry-title a {color: #212121;}
+.entry-main-content {display: inline-block;vertical-align: top;box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.12);width: 100%;position: relative;border-radius: 20px;}
+.blog .post-info, .blog-page .post-info, article.hentry .post-info{padding: 20px;box-sizing: border-box;display: inline-block;vertical-align: top;width: 100%;text-align: left;position: relative;}
+.entry-main-content .entry-thumbnail {position: relative;text-align: center;width: 100%;float: left;}
+.entry-meta .meta-inner, .stick-cat {position: absolute;top: 15px;left: 25px;bottom: auto;right: auto;border-radius: 50px;z-index: 1;}
+.sticky-post, .stick-cat .meta-inner .categories-links a {padding: 3px 10px;display: inline-block;vertical-align: top;font-size: 14px;line-height: 24px;background: #FB4848;color: #fff;margin-inline-end: 5px;border-radius: 20px;}
+.sticky-post {background: none;padding: 0;text-transform: uppercase;font-size: 14px;font-weight: 600;margin-inline-end: 10px;color: #212121;}
+.fc-date-btn-main {display: flex;flex-wrap: wrap;align-items: center;margin-block-start: 25px;justify-content: space-between;}
+.blog .post-info-inner .entry-content-date {display: inline-block;vertical-align: top;}
+.entry-meta-blog .entry-date .fa, .post-info .entry-date .fa {display: none;}
+.entry-content-inner {position: relative;display: inline-block;vertical-align: top;text-align: center;width: 100%;overflow: hidden;max-height: 500px;}
+.entry-thumbnail .block_hover {background: rgba(0,0,0,0.3) none repeat scroll 0 0;bottom: 0;left: 0;margin: 0;position: absolute;right: 0;text-align: center;top: 0;transition: all 0.5s ease-out 0s;visibility: visible;-webkit-transition: all 0.5s ease-out 0s;-moz-transition: all 0.5s ease-out 0s;-ms-transition: all 0.5s ease-out 0s;-o-transition: all 0.5s ease-out 0s;border-top-left-radius: 20px;border-top-right-radius: 20px;}
+.entry-thumbnail .entry-content-inner img {display: flex;border-top-left-radius: 20px;border-top-right-radius: 20px;}
+.single-post #secondary {display: none;}
+.entry-meta .meta-inner {padding-inline-end: 10px;position: relative;margin-inline-end: 10px;}
+.single .page-title .entry-meta {display: inline-block;width: 100%;text-align: center;position: relative;line-height: 0;vertical-align: top;}
+.single-post .meta-inner .entry-date, .single-post .meta-inner .fa, .meta-inner .comments-link a {color: #fff;text-transform: capitalize;}
+.single-post .meta-inner, .single .entry-main-content .meta-inner {display: inline-block;vertical-align: top;}
+.single-post .breadcrumbs {display: none;}
+.entry_tag_links {display: flex;}
+.single .tags-links {padding-top: 35px;display: block;margin: 0;clear: both;}
+.social-links .widget-title, .tags-links .label {display: inline-block;vertical-align: middle;margin-inline-end: 8px;font-weight: 400;color: #212121;font-size: 15px;}
+.tags-links a {padding: 7px 14px;margin: 4px 2px;display: inline-block;vertical-align: middle;background-color: #f2f2f2;border-radius: 50px;}
+.single-post .ny-ourservice-section,.single-post .ny-testimonial-section {display: none;}
+.wp-block-image.size-large img {border-radius: 20px;}
+#follow_us .toggle-block li > a img {border-radius: 50px;}
+.single .social-links {align-items: center;display: flex;flex: 1;justify-content: flex-end;}
+.single-post .comments-area, .entry-content-dec {clear: both;line-height: 26px;border-bottom: 1px solid #e5e5e5;padding-block-end: 10px;}
+.single-post .entry-content-dec-inner {margin-bottom: 20px;}
+.single .entry-main-content .entry-thumbnail {width: 100%;margin-bottom: 50px;}
+.entry-main-content .entry-thumbnail {position: relative;text-align: center;width: 100%;float: left;}
+.single .navigation.post-navigation {text-align: left;padding: 30px 0;box-sizing: border-box;margin-top: 0;display: block;margin: 0 auto;}
+.navigation.post-navigation .nav-links {display: flex;justify-content: space-between;margin: 0;align-items: flex-start;}
+.post-navigation a.prev-post {display: inline-flex;flex-direction: column;position: relative;-webkit-transition: all 0.35s ease 0s;transition: all 0.35s ease 0s;color: #212121;}
+.nav-links .prev, .nav-links .next {display: flex;align-items: center;}
+.post-next-content, .post-previous-content {width: 280px;}
+.post-navigation .nav-links a.prev-post .post-nav-link::after, .post-navigation .nav-links a.next-post .post-nav-link::after {background-image: url("images/freshcodes/back-arrow.svg");background-color: rgba(0, 0, 0, 0);background-position: center;background-repeat: no-repeat;background-size: 12px;height: 15px;width: 15px;content: '';position: absolute;left: 0;top: 5px;right: auto;bottom: auto;}
+.prev-nav-text-wrapper, .next-nav-text-wrapper {font-size: 18px;font-weight: 600;line-height: 22px;color: #212121;}
+.post-navigation a.next-post {text-align: right;position: relative;-webkit-transition: all 0.35s ease 0s;transition: all 0.35s ease 0s;}
+.post-navigation .nav-links a.next-post .post-nav-link::after {background-image: url("images/freshcodes/next-arrow.svg");left: auto;right: 0;}
+.single-post .comments-area, .entry-content-dec {clear: both;line-height: 26px;border-bottom: 1px solid #e5e5e5;padding-block-end: 10px;display: block;margin: 20px auto 30px;text-align: left;width: auto;border: 0;}
+.comment-reply-title, .comments-title {font-size: 22px;font-weight: 600;line-height: 30px;position: relative;margin-bottom: 10px;display: block;}
+.comment-list {list-style: none;margin: 0 0 30px 0;}
+.comment-body {position: relative;box-sizing: border-box;padding: 20px 0;margin-top: 20px;border-top: 1px solid #e5e5e5;display: inline-block;vertical-align: top;}
+.comments-area .comment-author {display: flex;font-size: 14px;}
+.comment-meta .avatar {width: 70px;height: auto;border-radius: 50px;border: 1px solid #e5e5e5;}
+.comment-author b, .comment-author a {font-weight: 600;text-transform: capitalize;font-size: 16px;margin-top: 10px;line-height: 20px;display: block;}
+.entry-meta-inner .author a, .comment-author b, .comment-meta .comment-author a {color: #212121;text-transform: uppercase;}
+.comment-author, .comment-awaiting-moderation, .comment-metadata {padding-inline-start: 110px;font-size: 14px;font-weight: 400;display: flex;}
+.comment-metadata a {color: #6e6e6e;display: block;padding: 3px 0;}
+.comment-edit-link::before {content: "\f040";margin-inline: 6px;vertical-align: middle;-webkit-font-smoothing: antialiased;display: inline-block;font: normal 12px/1 FontAwesome;text-decoration: inherit;}
+.comment-content {padding-top: 10px;color: #212121;}
+.comment-content > :last-child {margin-bottom: 0;}
+.comment-content, .comments-area, .comments-area .comment-list .reply {padding-top: 15px;padding-inline-start: 110px;box-sizing: border-box;}
+.comment-reply-link {text-decoration: underline;}
+.comment-list .children {list-style: none;margin-inline-start: 60px;margin-top: 0;}
+.comments-area .comment-respond {margin: 30px 0;display: inline-block;width: 100%;box-sizing: border-box;}
+.comment-form-comment {display: inline-block;width: 100%;}
+.comment-respond .form-submit {margin-bottom: 0;}
+.single .entry-main-content, .attachment .entry-main-content {padding: 0;text-align: left;box-shadow: none;}
+.single .entry-main-content .entry-thumbnail {width: 100%;margin-bottom: 50px;}
+.says {display: none;}
+.comment-author {position: relative;}
+.comment-author, .comment-awaiting-moderation, .comment-metadata {padding-inline-start: 110px;font-size: 14px;font-weight: 400;display: flex;}
+.comment-author .avatar {position: absolute;top: 0;left: 0;}
+.comment-form textarea {width: 100%;padding: 12px 12px;box-sizing: border-box;line-height: 22px;background-color: transparent;}
+.primary-sidebar .widget.widget_search .search-form {display: flex;gap: 9px;}
+.primary-sidebar .widget {border-bottom: 1px solid #e5e5e5;}
+.primary-sidebar .widget:first-child {padding-top: 0;}
+.primary-sidebar .widget {clear: both;list-style: outside none none;margin: 0 0 -1px 0;overflow: hidden;padding: 30px 0;position: relative;}
+.widget_search .search-form .search-field, .widget_search label {width: 100%;}
+.widget.widget_search .widget-search-btn::after{content: "";mask-image: url("images/freshcodes/search.svg");-webkit-mask-image: url("images/freshcodes/search.svg");mask-position: center;-webkit-mask-position: center;mask-repeat: no-repeat;-webkit-mask-repeat: no-repeat;mask-size: 18px;-webkit-mask-size: 18px;border: 0;width: 20px;height: 20px;position: absolute;right: 0;top: 0;bottom: 0;left: 0;margin: auto;}
+.widget.widget_search input[type="submit"]{font-size: 0;position: relative;}
+.widget-area .widget_search .widget-search-btn .search-submit {padding: 0;background: none;border: 0;}
+.widget_search .widget-search-btn {position: relative;cursor: pointer;}
+.widget_search .search-form .search-field{border: 1px solid #e5e5e5;padding: 14px 12px;border-radius: 30px;}
+.primary-sidebar .widget:last-child {border: 0;}
+.page-title.header::before{content: "";position: absolute;bottom: 0;width: 100%;font-size: 20px;text-align: center;content: "";z-index: 1;height: 100%;opacity: 0.5;background: #000;right: 0;left: 0;margin: 0 auto;}
+.page-title.header {position: relative;}
+.page-title-inner {padding-block: 3%;}
+.single-post .page-title.header {display: block;}
+.blog-image {min-height: 420px;background-repeat: no-repeat;background-position: center;background-attachment: initial;background-size: cover;border-radius: 20px;}
+/*----------------------------------------*/
+
+/*-----------------Footer CSS---------------*/
+.footer-newsletter {background-image: url("images/freshcodes/nyc-appoiment-banner.webp");padding-block: 11%;background-repeat: no-repeat;background-size: cover;background-attachment: scroll;background-position: right;}
+.nyc-appoi-content span {margin-block: 2%;display: inline-block;}
+.footer-bottom .footer-right .textwidget p {margin: 0;}
+.footer-bottom .theme-container {display: flex;justify-content: center;gap: 20px;}
+.site-footer {margin: 0;display: inline-block;vertical-align: top;position: relative;z-index: 3;clear: both;width: 100%;}
+#footer-widget-area {padding-block: 5%;display: grid;grid-template-columns: 1.8fr 1.5fr 1fr;gap: 70px;}
+.footer-bottom .theme-container .footer-left {position: relative;}
+.footer-bottom .theme-container .footer-left::after {content: "";background: #fff;height: 100%;width: 1px;display: flex;position: absolute;right: -11px;top: 0;}
+.footer-widget {box-sizing: border-box;width: 100%;display: inline-block;vertical-align: top;flex: auto;}
+.widget.widgets-footercontact .contact_wrapper.toggle-block {box-sizing: border-box;}
+.widget ul li, .widget.woocommerce.widget_product_categories li {position: relative;margin-block: 15px;}
+.widget ul li:last-child, .widget.woocommerce.widget_product_categories li:last-child {margin: 0;}
+.static-links-list span {float: none;padding: 4px 0;width: auto;display: block;}
+.footer-top {border-bottom: 1px solid #fb4848}
+.widget .widget-title, .primary-sidebar .widget_block h2 {position: relative;font-size: 20px;display: block;padding: 0;margin: 0 0 20px;text-transform: uppercase;line-height: 24px;}
+.footer-bottom {padding-block: 1.2%;background-color: #2c343d;}
+.footer-bottom .site-info {text-align: center;}
+.footer-widget .widget {margin: 20px 0;position: relative;display: inline-block;vertical-align: top;width: 100%;}
+/*----------------------------------------*/
