@@ -29,10 +29,14 @@
 	box-shadow: 0 0 0px #fff, 0 0 14px #fff, 0 0 8px #0ba9ca, 0 0 0px #0ba9ca, 0 0 2px #0ba9ca, 0 0 20px #0ba9ca;
 	animation: blink 1.7s infinite alternate;
 }
+.blue{
+	text-shadow: 0 0 1px #0ba9ca, 0 0 12px #0ba9ca, 0 0 20px #0ba9ca, 0 0 20px #0ba9ca, 0 0 20px #0ba9ca;
+}
 @-webkit-keyframes blink {
   100% {
     box-shadow: 0 0 3px #fff, 0 0 10px #fff, 0 0 12px #fff, 0 0 18px #0ba9ca,
       0 0 22px #0ba9ca, 0 0 35px #0ba9ca;
+	text-shadow: 0 0 5px #0ba9ca, 0 0 25px #0ba9ca, 0 0 50px #0ba9ca, 0 0 100px #0ba9ca, 0 0 200px #0ba9ca;
   }
 }
 
@@ -40,13 +44,17 @@
 	100% {
     box-shadow: 0 0 3px #fff, 0 0 10px #fff, 0 0 12px #fff, 0 0 18px #0ba9ca,
       0 0 22px #0ba9ca, 0 0 35px #0ba9ca;
+	text-shadow: 0 0 5px #0ba9ca, 0 0 25px #0ba9ca, 0 0 50px #0ba9ca, 0 0 100px #0ba9ca, 0 0 200px #0ba9ca;
   }
 }
     </style>
 </head>
 <body>
     <canvas></canvas>
-    <div class="demo"><img src="snow-1.jpg"></div>
+    <div class="demo">
+	    <h1 class="new-year blue">Happy New Year</h1>
+	    <img src="snow-1.jpg">
+    </div>
 </body>
 <script>
 
